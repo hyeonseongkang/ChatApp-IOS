@@ -7,10 +7,20 @@
 //
 
 import SwiftUI
+import FirebaseDatabase
 
 struct ContentView: View {
+    
+    let ref = Database.database().reference()
+    
     var body: some View {
-        Text("Hello, World!")
+            
+        Button(action: {
+            self.ref.childByAutoId().setValue(["name" :"hyeonseong", "age" : 25])
+        }) {
+            Text("InputData")
+        }
+    
     }
 }
 
