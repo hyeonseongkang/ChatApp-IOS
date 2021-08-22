@@ -10,27 +10,50 @@ import SwiftUI
 import FirebaseDatabase
 import FirebaseStorage
 
+class UserList : ObservableObject {
+    
+    @Published var list = [User]()
+    
+    init() {
+        let ref = Database.database().reference().child("user")
+        ref.observe(DataEventType.childAdded, with: { snapshot in
+            let dict = snapshot.value as! [String:AnyObject]
+            
+            let userId = dict["id"] as? String ?? ""
+            let userPw = dict["pw"] as? String ?? ""
+            let userName = dict["name"] as? String ?? ""
+            let userKey = dict["key"] as? String ?? ""
+            let userEmail = dict["email"] as? String ?? ""
+            let userPhone = dict["phone"] as? String ?? ""
+            let userProfile = dict["profile"] as? String ?? ""
+            
+            self.list.append(User(id: userId, name: userName, pw: userPw, key: userKey, phone: userPhone, email: userEmail, profile: userProfile))
+        })
+    }
+    
+    
+}
+
 struct ContentView: View {
 
     let ref = Database.database().reference().child("user")
     @ObservedObject var friendsList = FriendList()
     
-    @State var friendCount = 0
+    @ObservedObject var userList = UserList()
     
-    @State var name: String = ""
     @State var show = false
-    @State var image:Data = .init(count:0)
-    
-    @State var imagePickerVisible: Bool = false
-    @State var selectedImage: Image? = Image(systemName: "photo")
-    
-    @State var downloadImage : UIImage?
-    
+    @State var image : Data = .init(count: 0)
+
     var body: some View {
         
-        VStack {
-            RegisterPage()
-        }
+
+        MessagePage()
+        /*
+         VStack {
+             RegisterPage()
+         }
+         */
+
     }
     
     func convertImageToBase64String (img: UIImage) -> String {

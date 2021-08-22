@@ -52,7 +52,6 @@ struct RegisterPage: View {
                     
                     TextField("아이디", text: $userId)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                    
                         .padding(.bottom, 10)
                         
                     
@@ -84,7 +83,7 @@ struct RegisterPage: View {
 
             
                 Button(action: {
-                    self.friendsList.addInfo(userId: self.userId, userName: self.userName, userPw: self.userPw, userKey: "", userPhone: self.userPhone, userEmail: self.userEmail, userProfile: UIImage(data: self.image)!)
+                        self.friendsList.addInfo(userId: self.userId, userName: self.userName, userPw: self.userPw, userKey: "", userPhone: self.userPhone, userEmail: self.userEmail, userProfile: UIImage(data: self.image)!)
                 }) {
                     Text("회원가입")
                         .font(.headline)
