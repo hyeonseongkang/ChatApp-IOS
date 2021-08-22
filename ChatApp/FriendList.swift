@@ -9,6 +9,7 @@
 import Foundation
 import Combine
 import FirebaseDatabase
+import FirebaseStorage
 
 class FriendList : ObservableObject {
 
@@ -31,11 +32,28 @@ class FriendList : ObservableObject {
         })
     }
 
-    func addInfo(userId : String, userName: String, userPw : String, userKey: String, userPhone: String, userEmail:  String, userProfile: String) {
-        let ref = Database.database().reference().child("photo")
-        let value: [String: Any] = ["userId" : userId, "userName" : userName]
-        ref.setValue(["photo" : userProfile])
+    func addInfo(userId : String, userName: String, userPw : String, userKey: String, userPhone: String, userEmail:  String, userProfile: UIImage) {
+        let ref = Database.database().reference().child("user")
+        let key = Database.database().reference().childByAutoId().key
 
-        //ref.childByAutoId().setValue(User(id: userId, name: userName, pw: userPw, key: userKey, phone: userPhone, email: userEmail, profile: "123"))
+        uploadImage(image: userProfile, userId: userId)
+        ref.child(key!).setValue(["id" : userId, "name" : userName, "pw" : userPw, "key": key, "phone": userPhone, "email" : userEmail, "profile" : userId])
+        
+    }
+    
+    func uploadImage(image:UIImage, userId: String) {
+        if let imageData = image.jpegData(compressionQuality: 1) {
+            let storage = Storage.storage()
+            storage.reference().child("\(userId)").putData(imageData, metadata: nil) {
+                (_, err) in
+                if let err = err {
+                    print("an error has occured - \(err.localizedDescription)")
+                } else {
+                    print("Image uploaded Successfully")
+                }
+            }
+        } else {
+            print("couldn't unwrap image as data")
+        }
     }
 }

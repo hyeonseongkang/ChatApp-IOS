@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8847B18626D218B400EA68A6 /* MyImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8847B18526D218B400EA68A6 /* MyImagePicker.swift */; };
+		88601E2926D258110039FA2B /* RegisterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88601E2826D258110039FA2B /* RegisterPage.swift */; };
+		88601E2B26D26B4A0039FA2B /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88601E2A26D26B4A0039FA2B /* LoginPage.swift */; };
 		88996B9926D133220030B982 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88996B9826D133220030B982 /* ImagePicker.swift */; };
 		88996B9B26D13D820030B982 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88996B9A26D13D820030B982 /* User.swift */; };
 		88996B9F26D13E200030B982 /* FriendPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88996B9E26D13E200030B982 /* FriendPage.swift */; };
@@ -26,6 +28,8 @@
 		59878D69A57B66DF5AB41730 /* Pods-ChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.debug.xcconfig"; path = "Target Support Files/Pods-ChatApp/Pods-ChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		77D94CC98C1E0E02571DD1B8 /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8847B18526D218B400EA68A6 /* MyImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImagePicker.swift; sourceTree = "<group>"; };
+		88601E2826D258110039FA2B /* RegisterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPage.swift; sourceTree = "<group>"; };
+		88601E2A26D26B4A0039FA2B /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		88996B9826D133220030B982 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		88996B9A26D13D820030B982 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		88996B9E26D13E200030B982 /* FriendPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPage.swift; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 				88996B9A26D13D820030B982 /* User.swift */,
 				88996B9E26D13E200030B982 /* FriendPage.swift */,
 				88996BA026D1439C0030B982 /* FriendList.swift */,
+				88601E2826D258110039FA2B /* RegisterPage.swift */,
+				88601E2A26D26B4A0039FA2B /* LoginPage.swift */,
 			);
 			path = ChatApp;
 			sourceTree = "<group>";
@@ -239,7 +245,9 @@
 				88996BA126D1439C0030B982 /* FriendList.swift in Sources */,
 				88E16DF126CE985C009610C7 /* SceneDelegate.swift in Sources */,
 				8847B18626D218B400EA68A6 /* MyImagePicker.swift in Sources */,
+				88601E2926D258110039FA2B /* RegisterPage.swift in Sources */,
 				88996B9B26D13D820030B982 /* User.swift in Sources */,
+				88601E2B26D26B4A0039FA2B /* LoginPage.swift in Sources */,
 				88E16DF326CE985C009610C7 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
