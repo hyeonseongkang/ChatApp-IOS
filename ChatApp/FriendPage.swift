@@ -31,10 +31,9 @@ class FriendPage: ObservableObject {
         })
     }
     
-    func addInfo(name: String) {
-        
+    func addInfo(userId : String, userName: String, userPw : String, userKey: String, userPhone: String, userEmail:  String, userProfile: String) {
         let ref = Database.database().reference()
-        ref.child("users").childByAutoId().setValue(["name":name])
+        ref.child("users").childByAutoId().setValue(User(id: userId, name: userName, pw: userPw, key: userKey, phone: userPhone, email: userEmail, profile: userProfile))
 
     }
 }

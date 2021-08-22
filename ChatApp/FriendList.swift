@@ -31,10 +31,11 @@ class FriendList : ObservableObject {
         })
     }
 
-    func addInfo(name: String) {
-        
-        let ref = Database.database().reference()
-        ref.child("users").childByAutoId().setValue(["name":name])
+    func addInfo(userId : String, userName: String, userPw : String, userKey: String, userPhone: String, userEmail:  String, userProfile: String) {
+        let ref = Database.database().reference().child("photo")
+        let value: [String: Any] = ["userId" : userId, "userName" : userName]
+        ref.setValue(["photo" : userProfile])
 
+        //ref.childByAutoId().setValue(User(id: userId, name: userName, pw: userPw, key: userKey, phone: userPhone, email: userEmail, profile: "123"))
     }
 }

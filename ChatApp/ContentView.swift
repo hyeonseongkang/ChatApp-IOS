@@ -10,10 +10,9 @@ import SwiftUI
 import FirebaseDatabase
 
 struct ContentView: View {
-    
-    let ref = Database.database().reference()
-    
-     @ObservedObject var friendsList = FriendList()
+
+    let ref = Database.database().reference().child("user")
+    @ObservedObject var friendsList = FriendList()
     
     @State var friendCount = 0
     
@@ -21,11 +20,34 @@ struct ContentView: View {
     @State var show = false
     @State var image:Data = .init(count:0)
     
+    @State var imagePickerVisible: Bool = false
+    @State var selectedImage: Image? = Image(systemName: "photo")
+    
     var body: some View {
         NavigationView {
             ZStack {
                 VStack {
                     
+                    ZStack {
+                        VStack {
+                            selectedImage?
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                            
+                            Button(action: {
+                                withAnimation {
+                                    self.imagePickerVisible.toggle()
+                                }
+                            }) {
+                                Text("Select an Image")
+                            }
+                        }.padding()
+                        
+                        if(imagePickerVisible) {
+                            MyImagePicker(imagePickerVisible: $imagePickerVisible, selectedImage: $selectedImage)
+                        }
+                    }
+
              
                     List(friendsList.list) { i in
                         Text(i.name)
@@ -56,7 +78,13 @@ struct ContentView: View {
                     
                     
                     Button(action: {
-                        Text(self.convertImageToBase64String(img: UIImage(data: self.image)!))
+                        var a = self.convertImageToBase64String(img: UIImage(data: self.image)!)
+    
+                        
+                        //userId : String, userName: String, userPw : String, userKey: String, userPhone: String, userEmail:  String, userProfile: String
+                        
+                        self.friendsList.addInfo(userId: "aa", userName: "123", userPw: "aaaa", userKey: "aaaaa", userPhone: "12312312", userEmail: "123123", userProfile: a)
+                        //Text(self.convertImageToBase64String(img: UIImage(systemName: self.selectedImage)!))
                        // print(self.convertImageToBase64String(img: UIImage(data: self.image)!))
                     }) {
                         Text("convert")

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8847B18626D218B400EA68A6 /* MyImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8847B18526D218B400EA68A6 /* MyImagePicker.swift */; };
 		88996B9926D133220030B982 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88996B9826D133220030B982 /* ImagePicker.swift */; };
 		88996B9B26D13D820030B982 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88996B9A26D13D820030B982 /* User.swift */; };
 		88996B9F26D13E200030B982 /* FriendPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88996B9E26D13E200030B982 /* FriendPage.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		59878D69A57B66DF5AB41730 /* Pods-ChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.debug.xcconfig"; path = "Target Support Files/Pods-ChatApp/Pods-ChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		77D94CC98C1E0E02571DD1B8 /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8847B18526D218B400EA68A6 /* MyImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImagePicker.swift; sourceTree = "<group>"; };
 		88996B9826D133220030B982 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		88996B9A26D13D820030B982 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		88996B9E26D13E200030B982 /* FriendPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPage.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				88E16DEE26CE985C009610C7 /* AppDelegate.swift */,
 				88E16DF026CE985C009610C7 /* SceneDelegate.swift */,
 				88E16DF226CE985C009610C7 /* ContentView.swift */,
+				8847B18526D218B400EA68A6 /* MyImagePicker.swift */,
 				88996B9826D133220030B982 /* ImagePicker.swift */,
 				88E16DF426CE985D009610C7 /* Assets.xcassets */,
 				88E16DF926CE985D009610C7 /* LaunchScreen.storyboard */,
@@ -235,6 +238,7 @@
 				88996B9F26D13E200030B982 /* FriendPage.swift in Sources */,
 				88996BA126D1439C0030B982 /* FriendList.swift in Sources */,
 				88E16DF126CE985C009610C7 /* SceneDelegate.swift in Sources */,
+				8847B18626D218B400EA68A6 /* MyImagePicker.swift in Sources */,
 				88996B9B26D13D820030B982 /* User.swift in Sources */,
 				88E16DF326CE985C009610C7 /* ContentView.swift in Sources */,
 			);
